@@ -31,7 +31,7 @@
         <div class="container">
             <header>
                 <div><h1>📊 Dashboard de Regresión Visual</h1></div>
-                <div class="last-update">Última actualización: <strong>07-01-2026 10:03hs</strong> (ART)</div>
+                <div class="last-update">Última actualización: <strong>07-01-2026 10:20hs</strong> (ART)</div>
             </header>
     
             <section class="filters-section">
@@ -39,14 +39,14 @@
                     <label>Sitio</label>
                     <select id="filterSite" onchange="filterTable()">
                         <option value="all">Todos</option>
-                        
+                        <option value="CIUDAD">CIUDAD</option>
                     </select>
                 </div>
                 <div class="filter-group">
                     <label>Dispositivo</label>
                     <select id="filterDevice" onchange="filterTable()">
                         <option value="all">Todos</option>
-                        
+                        <option value="desktop">desktop</option>
                     </select>
                 </div>
                 <div class="filter-group">
@@ -62,14 +62,14 @@
                     <label>Versión</label>
                     <select id="filterVer" onchange="filterTable()">
                         <option value="all">Todas</option>
-                        
+                        <option value="651">651</option>
                     </select>
                 </div>
                 <div class="filter-group">
                     <label>Fecha del Test</label>
                     <select id="filterDate" onchange="filterTable()">
                         <option value="all">Todos los días</option>
-                        
+                        <option value="07-01-2026">07-01-2026</option>
                     </select>
                 </div>
             </section>
@@ -86,7 +86,16 @@
                     </tr>
                 </thead>
                 <tbody>
-    </tbody></table>
+    
+        <tr data-site="CIUDAD" data-env="PROD" data-device="desktop" data-date="07-01-2026" data-ver="651">
+            <td><strong>CIUDAD</strong></td>
+            <td>desktop</td>
+            <td><span class="env-tag" style="color: #4caf50">PROD</span></td>
+            <td>651</td>
+            <td>07-01-2026 13:13hs</td>
+            <td><a class="btn-link" target="_blank" href="./ciudad/desktop/prod/651/07-01-2026_13-13/index.html">ABRIR REPORTE</a></td>
+        </tr>
+        </tbody></table>
         <script>
         function filterTable() {
             const fSite = document.getElementById('filterSite').value;
