@@ -50,5 +50,5 @@ jobs:
           folder: .        # La raíz actual
           branch: gh-pages
           clean: false
-          git-config-name: "Alan-Artear"
-          git-config-email: "Alan-Artear@users.noreply.github.com"
+          git-config-name: "Alan2527"
+          git-config-email: "Alan2527@users.noreply.github.com"
