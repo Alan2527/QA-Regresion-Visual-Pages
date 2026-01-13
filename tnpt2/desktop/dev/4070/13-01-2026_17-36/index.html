@@ -1,0 +1,575 @@
+
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Reporte de Regresión Desktop - TN Pt.2 Dev Versión 4070</title>
+    <style>
+    body { font-family: Arial; background: #f7f7f7; margin: 20px; }
+    h1 { color: #1e3a8a; border-bottom: 3px solid #bfdbfe; padding-bottom: 10px; }
+    h2 { margin-top: 40px; color: #555; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+    h3, h4 { color: #000; margin-top: 10px; margin-bottom: 5px; font-size: 1em; }
+    code { background-color: #eee; padding: 2px 4px; border-radius: 3px; }
+    details > summary { list-style: none; } 
+    
+    /* Reglas del contenedor para el scroll */
+    .container { 
+        display: flex; 
+        gap: 20px; 
+        margin-bottom: 40px; 
+        align-items: flex-start;
+        border: 1px solid #eee;
+        padding: 10px;
+        background: #fafafa;
+        border-radius: 4px;
+        overflow-x: auto; 
+        overflow-y: hidden; 
+    }
+    .container > div { 
+        flex: 1; 
+        min-width: 480px; 
+    }
+    /* Contenedor de la imagen V2 */
+    div[id^="image-container-"] {
+        position: relative; 
+        border: 1px solid #ddd;
+    }
+    img { 
+        width: 100%; 
+        height: auto;
+        border: 3px solid #ccc; 
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        display: block;
+    }
+    
+    /* Estilo de la Flecha Indicadora */
+    .highlight-box {
+        position: absolute;
+        pointer-events: none; 
+        z-index: 1000;
+        opacity: 1; 
+        border-left: 15px solid transparent; 
+        border-right: 15px solid transparent; 
+        border-top: 30px solid #ffcc00; /* Amarillo */
+        transform: translateX(-50%); 
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+    }
+    
+    /* Estilo para el botón de volver arriba */
+    #scrollToTopBtn {
+        display: none; 
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #1e3a8a; 
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 50%; 
+        font-size: 18px;
+        line-height: 0; 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: background-color 0.3s, opacity 0.3s;
+    }
+    #scrollToTopBtn:hover {
+        background-color: #3b82f6; 
+    }
+    </style>
+    </head>
+    <body>
+    <h1>Reporte de Regresión Desktop - TN Pt.2 Dev Versión 4070</h1>
+    
+    <p><strong>Versión Testeada:</strong> <code>4070</code></p>
+    <p><strong>Fecha y Hora de Ejecución:</strong> 13/01/2026 14:37:00</p> 
+    <p><strong>Tiempo Total de Proceso:</strong> 0:01:04</p> 
+    <p>
+        <strong>Umbral de Tolerancia:</strong> 0 píxeles.
+    </p>
+    <p>
+        <strong>Resumen global:</strong> 
+        <span style="font-weight: bold; color: red">
+        ❌ Se encontraron diferencias graves en 1 de 1 urls.
+        </span>
+    </p>
+
+    
+    <hr style="margin-top: 20px; margin-bottom: 20px;"/>
+    
+    <div id="report-details-container">
+        
+        <div style="border: 2px solid #ddd; padding: 15px; margin-top: 20px; border-radius: 8px;">
+            <h2>Article</h2>
+            
+        <p><strong>URL Base (V1):</strong> <code>https://artear-tn-dev.cdn.arcpublishing.com/internacional/2024/12/09/los-rebeldes-sirios-apuran-la-transicion-para-evitar-conflictos-internos-y-la-irrupcion-del-estado-islamico/</code></p>
+        <p><strong>URL Comparada (V2):</strong> <code>https://artear-tn-dev.cdn.arcpublishing.com/internacional/2024/12/09/los-rebeldes-sirios-apuran-la-transicion-para-evitar-conflictos-internos-y-la-irrupcion-del-estado-islamico/?d=4070</code></p>
+        <p>
+            <strong>Resultado:</strong> 
+            <span style="font-weight: bold; color: red">
+            ❌ Se detectaron 23 diferencias graves.
+            </span>
+        </p>
+        <p><strong>Tiempo de Ejecución:</strong> 0:01:03</p> 
+        
+            
+            <details>
+                <summary style="cursor: pointer; font-weight: bold; color: #1e3a8a; display: flex; align-items: center;">
+                    Detalle de diferencias (Rojo: Grave, Azul: Desplazamiento Menor)
+                    <span class="arrow-icon" style="font-size: 1.2em; margin-left: 10px; transition: transform 0.2s; display: inline-block;">&#9660;</span>
+                </summary>
+                <div id="diff-list-article" class="diff-container" style="margin-top: 10px; background: #fff; padding: 10px; border: 1px solid #eee;">
+                    <ul>
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '264,5313,479,68', this)"
+                data-coords="264,5313,479,68"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > article > div > header > h4"
+                data-id="item-article-0"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=card__headline font__display</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 102.00 | V2: 68.00 | Diff: 34.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '264,5312,422,69', this)"
+                data-coords="264,5312,422,69"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > article > div > header > h4 > a"
+                data-id="item-article-1"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>a</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 103.00 | V2: 69.00 | Diff: 34.00px<br>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 473.48 | V2: 422.39 | Diff: 51.09px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: #007bff; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '264,5389,176,26', this)"
+                data-coords="264,5389,176,26"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > article > div > footer > div"
+                data-id="item-article-2"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=authors font__body card__author</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:#007bff;'>DIFERENCIA MENOR</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5423.27 | V2: 5389.27 | Diff: 34.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: #007bff; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '292,5389,148,24', this)"
+                data-coords="292,5389,148,24"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > article > div > footer > div > h3"
+                data-id="item-article-3"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>h3</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:#007bff;'>DIFERENCIA MENOR</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5423.27 | V2: 5389.27 | Diff: 34.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: #007bff; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '292,5393,148,19', this)"
+                data-coords="292,5393,148,19"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > article > div > footer > div > h3 > a"
+                data-id="item-article-4"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=author__name font__action</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:#007bff;'>DIFERENCIA MENOR</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5427.27 | V2: 5393.27 | Diff: 34.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '799,5028,238,88', this)"
+                data-coords="799,5028,238,88"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > div:nth-child(2) > article > div > header > h4 > a"
+                data-id="item-article-5"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>a</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 271.48 | V2: 238.27 | Diff: 33.22px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '799,5281,313,90', this)"
+                data-coords="799,5281,313,90"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > div:nth-child(2) > article:nth-child(2) > div > header > h4"
+                data-id="item-article-6"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=card__headline font__display</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 60.00 | V2: 90.00 | Diff: 30.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '799,5282,313,88', this)"
+                data-coords="799,5282,313,88"
+                data-selector="div#fusion-app > div:nth-child(7) > div:nth-child(4) > div > div:nth-child(2) > article:nth-child(2) > div > header > h4 > a"
+                data-id="item-article-7"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>a</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 58.00 | V2: 88.00 | Diff: 30.00px<br>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 300.86 | V2: 313.41 | Diff: 12.55px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5812,226,40', this)"
+                data-coords="500,5812,226,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li > div > a"
+                data-id="item-article-8"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=font__action</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 268.80 | V2: 226.19 | Diff: 42.61px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5812,226,24', this)"
+                data-coords="500,5812,226,24"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li > div > a > span"
+                data-id="item-article-9"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=label</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 268.80 | V2: 226.19 | Diff: 42.61px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5852,449,64', this)"
+                data-coords="500,5852,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(2)"
+                data-id="item-article-10"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>li:nth-child(2)</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5852,449,64', this)"
+                data-coords="500,5852,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(2) > div"
+                data-id="item-article-11"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=link_button text_button dark medium</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5852,295,40', this)"
+                data-coords="500,5852,295,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(2) > div > a"
+                data-id="item-article-12"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>div#fusion-app > footer > div:nth-child(2) > div >...</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>AUSENTE V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5852,295,24', this)"
+                data-coords="500,5852,295,24"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(2) > div > a > span"
+                data-id="item-article-13"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>div#fusion-app > footer > div:nth-child(2) > div >...</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>AUSENTE V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5916,449,64', this)"
+                data-coords="500,5916,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(3)"
+                data-id="item-article-14"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>li:nth-child(3)</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px<br>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5892.08 | V2: 5916.08 | Diff: 24.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5916,449,64', this)"
+                data-coords="500,5916,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(3) > div"
+                data-id="item-article-15"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=link_button text_button dark medium</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px<br>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5892.08 | V2: 5916.08 | Diff: 24.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5892,31,40', this)"
+                data-coords="500,5892,31,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(3) > div > a"
+                data-id="item-article-16"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>div#fusion-app > footer > div:nth-child(2) > div >...</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>AUSENTE V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5892,31,24', this)"
+                data-coords="500,5892,31,24"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(3) > div > a > span"
+                data-id="item-article-17"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>div#fusion-app > footer > div:nth-child(2) > div >...</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>AUSENTE V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5980,449,64', this)"
+                data-coords="500,5980,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(4)"
+                data-id="item-article-18"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>li:nth-child(4)</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px<br>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5932.08 | V2: 5980.08 | Diff: 48.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5980,449,64', this)"
+                data-coords="500,5980,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(4) > div"
+                data-id="item-article-19"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=link_button text_button dark medium</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px<br>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5932.08 | V2: 5980.08 | Diff: 48.00px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5980,449,64', this)"
+                data-coords="500,5980,449,64"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(4) > div > a"
+                data-id="item-article-20"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=font__action</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 40.00 | V2: 64.00 | Diff: 24.00px<br>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5932.08 | V2: 5980.08 | Diff: 48.00px<br>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 258.02 | V2: 449.50 | Diff: 191.48px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5980,449,48', this)"
+                data-coords="500,5980,449,48"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(4) > div > a > span"
+                data-id="item-article-21"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=label</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>DIFERENCIA ALTURA (H)</b> | V1: 24.00 | V2: 48.00 | Diff: 24.00px<br>Tipo: <b>DIFERENCIA POSICIÓN (Y)</b> | V1: 5932.08 | V2: 5980.08 | Diff: 48.00px<br>Tipo: <b>DIFERENCIA ANCHO (W)</b> | V1: 258.02 | V2: 449.50 | Diff: 191.48px</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5876,259,40', this)"
+                data-coords="500,5876,259,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(2) > div > button"
+                data-id="item-article-22"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=font__action</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>NUEVO EN V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5876,259,40', this)"
+                data-coords="500,5876,259,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(2) > div > button > span"
+                data-id="item-article-23"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=label</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>NUEVO EN V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5940,258,40', this)"
+                data-coords="500,5940,258,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(3) > div > button"
+                data-id="item-article-24"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=font__action</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>NUEVO EN V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            
+            <li class='diff-item' 
+                style='color: red; border-bottom: 1px dotted #ccc; padding: 5px 0; cursor: pointer;'
+                onclick="highlightElement('article', '500,5940,258,40', this)"
+                data-coords="500,5940,258,40"
+                data-selector="div#fusion-app > footer > div:nth-child(2) > div > div:nth-child(2) > ul > li:nth-child(3) > div > button > span"
+                data-id="item-article-25"
+                >
+                <span style="font-weight: bold;">Elemento:</span> <code>class=label</code> 
+                <br><span style="font-weight: bold;">Resultado Agrupado:</span> <span style='color:red;'>DIFERENCIA GRAVE</span>
+                <div style='margin-top: 5px; border-left: 2px solid #ccc; padding-left: 5px;'>Tipo: <b>NUEVO EN V2</b> | V1: N/A | V2: N/A | Diff: N/A</div>
+            </li>
+            </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary style="cursor: pointer; font-weight: bold; color: #1e3a8a; display: flex; align-items: center;">
+                    Contexto Visual
+                    <span class="arrow-icon" style="font-size: 1.2em; margin-left: 10px; transition: transform 0.2s; display: inline-block;">&#9660;</span>
+                </summary>
+            <div class='container' id='container-article'>
+                <div>
+                    <h4>Versión Base (V1)</h4>
+                    <img src='article_V4070_base_20260113_143700.png' alt='Versión 1'>
+                </div>
+                <div id="image-container-article" style="position: relative;">
+                    <h4>Versión Nueva (V2) - Diferencias graves (Rojo) o menores (Azul)</h4>
+                    <img id="screenshot-article" src='article_V4070_diff_20260113_143700.png' alt='Versión 2 (Diferencias)'>
+                    <div id="highlight-box-article" class="highlight-box" style="display: none;"></div>
+                </div>
+            </div>
+            </details>
+
+        </div>
+        
+    </div>
+    
+    <button id="scrollToTopBtn" title="Ir Arriba">↑</button> 
+    
+    
+    <script>
+        let lastHighlightedItem = null;
+        const ARROW_HEIGHT = -5; 
+
+        function highlightElement(urlId, coordsStr, clickedItem) {
+            // 1. Limpiar el resaltado anterior
+            if (lastHighlightedItem) {
+                lastHighlightedItem.style.backgroundColor = 'transparent';
+            }
+
+            // 2. Resaltar el elemento clicado en la lista (visual feedback)
+            clickedItem.style.backgroundColor = '#fffacd'; 
+            lastHighlightedItem = clickedItem;
+
+            // 3. Obtener elementos de la imagen y el box
+            const imageContainer = document.getElementById(`image-container-${urlId}`); 
+            const screenshot = document.getElementById(`screenshot-${urlId}`);
+            const highlightBox = document.getElementById(`highlight-box-${urlId}`);
+            
+            if (!screenshot || !highlightBox || !imageContainer) return;
+
+            // 4. Obtener las coordenadas originales (en píxeles de la captura completa)
+            const coords = coordsStr.split(',').map(Number);
+            const [origX, origY, origW, origH] = coords;
+            
+            // 5. Calcular la escala 
+            const displayedWidth = screenshot.clientWidth;
+            const originalWidth = 1920; 
+            
+            if (displayedWidth > 0 && originalWidth > 0) {
+                const scaleFactor = displayedWidth / originalWidth; 
+
+                // 6. Aplicar el factor de escala a las coordenadas
+                const scaledX = origX * scaleFactor;
+                const scaledY = origY * scaleFactor;
+                
+                // 7. POSICIONAMIENTO DE LA FLECHA 
+                
+                highlightBox.style.display = 'block';
+                
+                // Posición X: Centro horizontal del recuadro rojo/azul
+                highlightBox.style.left = `${scaledX + (origW * scaleFactor / 2)}px`; 
+                
+                // Posición Y CORREGIDA
+                highlightBox.style.top = `${scaledY - ARROW_HEIGHT}px`; 
+                
+                // 8. SCROLL AUTOMÁTICO 
+                
+                const imageContainerRect = imageContainer.getBoundingClientRect();
+                
+                const targetY = window.pageYOffset + imageContainerRect.top + scaledY; 
+
+                window.scrollTo({
+                    top: targetY - 100, 
+                    behavior: 'smooth'
+                });
+                
+            } else {
+                highlightBox.style.display = 'none';
+                console.error("No se pudo obtener el ancho de la imagen para calcular la escala.");
+            }
+        }
+        
+        // Función para reposicionar el highlight si se redimensiona la ventana
+        window.addEventListener('resize', () => {
+             if (lastHighlightedItem) {
+                const coordsStr = lastHighlightedItem.getAttribute('data-coords');
+                let listContainer = lastHighlightedItem.closest('.diff-container');
+                if (listContainer) {
+                    const urlId = listContainer.id.replace('diff-list-', '');
+                    highlightElement(urlId, coordsStr, lastHighlightedItem); 
+                }
+            }
+        });
+        
+        // Corrección de la flecha del summary
+        document.querySelectorAll('details').forEach(detail => {
+            const arrow = detail.querySelector('.arrow-icon');
+            if (detail.open && arrow) {
+                 arrow.style.transform = 'rotate(180deg)';
+            }
+            detail.addEventListener('toggle', () => {
+                if (arrow) {
+                    arrow.style.transform = detail.open ? 'rotate(180deg)' : 'rotate(0deg)';
+                }
+            });
+        });
+        
+        // --- Código para el botón Volver Arriba ---
+        const scrollButton = document.getElementById('scrollToTopBtn');
+
+        // Mostrar u ocultar el botón basado en la posición de scroll
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        // Al hacer clic, desplaza suavemente al principio de la página
+        scrollButton.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        // -----------------------------------------------
+
+    </script>
+      
+    
+    </body>
+    </html>
+    
