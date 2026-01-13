@@ -1,20 +1,23 @@
-name: Eliminar reportes DEV
+name: Eliminar reportes SBX
 
 on:
-  workflow_dispatch: # Ejecución manual
+  workflow_dispatch:
 
 jobs:
-  cleanup-dev:
+  cleanup:
     runs-on: ubuntu-latest
+    # --- AGREGA ESTO ---
+    permissions:
+      contents: write
+    # ------------------
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
 
-      - name: Remove DEV directories
+      - name: Remove SBX directories
         run: |
-          # Lista de rutas actualizadas a 'dev'
           paths=(
             "ciudad/desktop/dev"
             "ciudad/webmobile/dev"
@@ -29,10 +32,9 @@ jobs:
             "tnpt3/desktop/dev"
             "tnpt3/webmobile/dev"
           )
-
           for path in "${paths[@]}"; do
             if [ -d "$path" ]; then
-              echo "Limpiando: $path"
+              echo "Borrando contenido de: $path"
               rm -rf "$path"/*
             else
               echo "La ruta $path no existe, omitiendo..."
@@ -43,12 +45,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
           git add .
-          
           if git diff --staged --quiet; then
-            echo "No se encontraron archivos dev para borrar."
+            echo "No hay cambios para committear."
           else
-            git commit -m "Automated cleanup: Removed dev files from gh-pages"
+            git commit -m "Automated cleanup: Removed sbx files from gh-pages"
             git push origin gh-pages
           fi
