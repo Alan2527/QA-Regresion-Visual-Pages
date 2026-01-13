@@ -2,9 +2,9 @@ name: Update QA Dashboard
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - gh-pages
+# push:            <-- Se comentaron o eliminaron estas líneas
+  #   branches:
+  #     - gh-pages
 
 jobs:
   build-index:
