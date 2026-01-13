@@ -1,0 +1,56 @@
+name: Eliminar reportes SBX
+
+on:
+  workflow_dispatch: # Permite ejecutarlo manualmente desde la pestaña "Actions"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages # Nos posicionamos directamente en la rama de destino
+
+      - name: Remove SBX directories
+        run: |
+          # Lista de rutas a borrar (basada en tu estructura)
+          paths=(
+            "ciudad/desktop/sbx"
+            "ciudad/webmobile/sbx"
+            "eldoce/desktop/sbx"
+            "eldoce/webmobile/sbx"
+            "eltrece/desktop/sbx"
+            "eltrece/webmobile/sbx"
+            "tnpt1/desktop/sbx"
+            "tnpt1/webmobile/sbx"
+            "tnpt2/desktop/sbx"
+            "tnpt2/webmobile/sbx"
+            "tnpt3/desktop/sbx"
+            "tnpt3/webmobile/sbx"
+          )
+
+          for path in "${paths[@]}"; do
+            if [ -d "$path" ]; then
+              echo "Borrando contenido de: $path"
+              rm -rf "$path"/*
+              # Si quieres borrar la carpeta sbx por completo, usa: rm -rf "$path"
+            else
+              echo "La ruta $path no existe, omitiendo..."
+            fi
+          done
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add .
+          
+          # Solo hace commit si hay cambios reales para evitar errores
+          if git diff --staged --quiet; then
+            echo "No hay cambios para committear."
+          else
+            git commit -m "Automated cleanup: Removed sbx files from gh-pages"
+            git push origin gh-pages
+          fi
